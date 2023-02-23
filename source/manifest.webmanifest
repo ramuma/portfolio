@@ -1,0 +1,10 @@
+{
+  "name": "Web Designer Portfolio",
+  "short_name": "Portfolio",
+  "description": "Портфолио веб-дизайнера и верстальщика",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "img/favicons/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/favicons/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

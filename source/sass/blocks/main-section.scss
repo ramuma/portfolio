@@ -1,0 +1,49 @@
+.main-section {
+	padding: 30px;
+	padding-top: 0;
+	background: #f1f1f1;
+	grid-area: section;
+	position: relative;
+	z-index: -1;
+
+	&__img {
+		position: absolute;
+		bottom: -95px;
+		right: -22%;
+		z-index: 0;
+	}
+
+	&__title {
+		font-size: 100px;
+		line-height: 90px;
+		display: inline-block;
+		max-width: 900px;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	&__description {
+		display: block;
+		max-width: 500px;
+		margin: 0;
+		margin-bottom: 40px;
+		line-height: 120%;
+	}
+}
+
+.blue {
+	color: $primary-color;
+}
+
+@media (max-width: 1365px) {
+	.main-section__img {
+		display: none;
+	}
+}
+
+@media (max-width: 900px) {
+	.main-section__title {
+		font-size: 50px;
+		line-height: 55px;
+	}
+}

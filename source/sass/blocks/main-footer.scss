@@ -1,0 +1,17 @@
+.main-footer {
+  background: $primary-color;
+  grid-area: footer;
+
+  border-radius: 4px;
+  margin: 0 10px;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__contact-wrapper {}
+
+  &__contacts {
+    list-style-type: none;
+    display: flex;
+  }
+}
