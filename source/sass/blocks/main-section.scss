@@ -42,18 +42,38 @@
 
 @media (max-width: 900px) {
 	.main-section {
-		//text-align:center;
+		&__tablet-wrapper {
+			display: flex;
+		}
 	}
+
 	.main-section__title {
 		font-size: 50px;
 		line-height: 55px;
-		max-width: 500px;
+		max-width: 50%;
 	}
+
 	.main-section__description {
 		margin: 0;
 		margin-bottom: 30px;
 	}
+
 	.main-section__link {
 		// margin: 0 auto;
+	}
+}
+
+@media (max-width: 720px) {
+	.main-section {
+		padding: 40px 10px;
+		&__tablet-wrapper {
+			flex-direction: column;
+		}
+	}
+
+	.main-section__title {
+		font-size: 50px;
+		line-height: 55px;
+		max-width: 100%;
 	}
 }

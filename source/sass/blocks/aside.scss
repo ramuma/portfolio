@@ -1,10 +1,9 @@
 .aside {
 	background-color: $primary-color;
-	grid-area: aside; 
+	grid-area: aside;
 	overflow-y: scroll;
 	border-radius: 4px;
 	margin: 10px;
-	// margin-bottom: 0;
 	z-index: 2;
 
 	padding: 20px;
@@ -20,13 +19,13 @@
 		display: inline-block;
 		margin: 0;
 		margin-bottom: 15px;
-		color: #f1f1f1;;
+		color: #f1f1f1;
+		;
 		font-size: 20px;
 		line-height: 20px;
 		font-weight: 700;
-		// position: sticky;
-		// top: 0px;
 	}
+
 	&__item {
 		list-style-type: none;
 		display: block;
@@ -57,13 +56,6 @@
 	.aside {
 		overflow-y: hidden;
 		overflow-x: scroll;
-	}
-	.aside__list {
-		//display: flex;
-	}
-
-	.aside__item {
-		margin-right: 10px;
-		//min-width: 300px;
+		margin-bottom: 0;
 	}
 }
