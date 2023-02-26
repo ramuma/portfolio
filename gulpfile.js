@@ -14,19 +14,19 @@ import del from 'del';
 import browser from 'browser-sync';
 
 const clean = () => {
-  return del('build');
+  return del('docs');
 };
 
 const copyBitmapFavicons = () => {
   return gulp.src('source/img/favicons/*.{png,jpg}')
     .pipe(squoosh({}))
-    .pipe(gulp.dest('build/img/favicons'));
+    .pipe(gulp.dest('docs/img/favicons'));
 };
 
 const copyVectorFavicons = () => {
   return gulp.src('source/img/favicons/*.svg')
     .pipe(svgo())
-    .pipe(gulp.dest('build/img/favicons'));
+    .pipe(gulp.dest('docs/img/favicons'));
 };
 
 const copyFiles = () => {
@@ -35,7 +35,7 @@ const copyFiles = () => {
     "source/*.ico",
     "source/manifest.webmanifest",
   ], { base: "source" })
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("docs"));
 };
 
 const copy = gulp.parallel(
@@ -47,7 +47,7 @@ const copy = gulp.parallel(
 const optimizeImages = () => {
   return gulp.src('source/img/*.{png,jpg}')
     .pipe(squoosh({}))
-    .pipe(gulp.dest('build/img'))
+    .pipe(gulp.dest('docs/img'))
 }
 
 export const styles = () => {
@@ -59,7 +59,7 @@ export const styles = () => {
       csso()
     ]))
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('build/css', { sourcemaps: '.'} ))
+    .pipe(gulp.dest('docs/css', { sourcemaps: '.'} ))
     .pipe(browser.stream());
 }
 
@@ -68,7 +68,7 @@ const createWebp = () => {
     .pipe(squoosh({
       webp: {}
     }))
-    .pipe(gulp.dest('build/img'))
+    .pipe(gulp.dest('docs/img'))
 }
 
 const sprite = () => {
@@ -78,13 +78,13 @@ const sprite = () => {
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 }
 
 const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('docs'));
 }
 
 const scripts = () => {
@@ -93,19 +93,19 @@ const scripts = () => {
     .pipe(rename({
       suffix: '.min',
     }))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('docs/js'))
     .pipe(browser.stream());
 }
 
 const copyImages = () => {
   return gulp.src('source/img/*.{png,jpg}')
-  .pipe(gulp.dest('build/img'))
+  .pipe(gulp.dest('docs/img'))
 }
 
 const svg = () =>
   gulp.src('source/img/*.svg')
   .pipe(svgo())
-  .pipe(gulp.dest('build/img'));
+  .pipe(gulp.dest('docs/img'));
 
 const reload = (done) => {
   browser.reload();
@@ -121,7 +121,7 @@ const watcher = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'docs'
     },
     cors: true,
     notify: false,
@@ -130,7 +130,7 @@ const server = (done) => {
   done();
 }
 
-export const build = gulp.series(
+export const docs = gulp.series(
   clean,
   gulp.parallel(
     copy,
