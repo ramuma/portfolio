@@ -5,6 +5,7 @@
 	border-radius: 4px;
 	margin: 10px;
 	margin-bottom: 0;
+	z-index: 2;
 
 	padding: 20px;
 
@@ -52,11 +53,17 @@
 }
 
 @media (max-width: 900px) {
+
+	.aside {
+		overflow-y: hidden;
+		overflow-x: scroll;
+	}
 	.aside__list {
 		display: flex;
 	}
 
 	.aside__item {
 		margin-right: 10px;
+		min-width: 300px;
 	}
 }

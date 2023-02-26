@@ -1,8 +1,15 @@
 .link {
     text-decoration: none;
-    color: #232B2A;
+    color: #f1f1f1;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
     &:hover {
-       
+        color: #232B2A;
+    }
+    &_dark {
+        color:#232B2A;
+        &:hover {
+            color: $primary-color;
+        }
     }
 }
